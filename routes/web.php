@@ -18,3 +18,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
+    Route::resource('/stores', \App\Http\Controllers\Admin\StoreController::class);
+    Route::resource('/products', \App\Http\Controllers\Admin\ProductController::class);
+});
