@@ -47,8 +47,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function store(): HasMany
+    public function store(): HasOne
     {
-        return $this->hasMany(Store::class);
+        return $this->hasOne(Store::class);
     }
 }

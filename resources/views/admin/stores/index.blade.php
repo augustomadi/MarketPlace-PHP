@@ -8,7 +8,7 @@
     <div class="py-12 pt-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="w-full flex justify-end mb-5 pr-5">
-                <a href="{{route('admin.stores.create')}}" 
+                <a href="{{route('admin.categories.create')}}" 
                     class="px-3 py-2 border border-green-900 bg-green-600 text-white 
                 hover:bg-green-900 transition duration-300 ease-in-out rounded">Criar Loja</a>
             </div>
@@ -20,6 +20,7 @@
                             <tr class="border-b border-gray-700">
                                 <th class="font-bold text-left px-4 py-2">#</th>
                                 <th class="font-bold text-left px-4 py-2">Loja</th>
+                                <th class="font-bold text-left px-4 py-2">Total Produtos</th>
                                 <th class="font-bold text-left px-4 py-2">Criado em</th>
                                 <th class="font-bold text-left px-4 py-2">Ações</th>
                             </tr>
@@ -28,7 +29,8 @@
                             @forelse ($stores as $store)
                             <tr>
                                     <td class="font-normal px-4 py-2">{{ $store->id }}</td>
-                                    <td class="font-normal px-4 py-2 w-[65%]">{{ $store->name }}</td>
+                                    <td class="font-normal px-4 py-2 w-[45%]">{{ $store->name }}</td>
+                                    <td class="font-normal px-4 py-2">{{ $store->products_count}}</td>
                                     <td class="font-normal px-4 py-2">{{ $store->created_at->diffForHumans()}}</td>
                                     <td class="font-normal px-4 py-2 w-[15%]">
                                     

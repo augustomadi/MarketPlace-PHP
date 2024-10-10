@@ -13,6 +13,8 @@ class Product extends Model
 
     protected $fillable = ['name', 'description'];
 
+    protected $withCount = ['categories'];
+
     public function store(): BelongsTo{
         
         return $this->belongsTo(Store::class);

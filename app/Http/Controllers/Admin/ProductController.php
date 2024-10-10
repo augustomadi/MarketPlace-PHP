@@ -32,7 +32,7 @@ class ProductController extends Controller
     // Renomeado de 'product' para 'store'
     public function store(ProductFormRequest $request, Store $store)
     {
-        $store = $store->findOrFail($request->store);
+        $store = auth()->store;
 
         $product = $store->products()->create($request->except('store', 'categories')); 
 
