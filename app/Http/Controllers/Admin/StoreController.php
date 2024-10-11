@@ -29,7 +29,7 @@ class StoreController extends Controller
     
     public function store(StoreFormRequest $request){
 
-        auth()->user->store()->create($request->all());
+        auth()->user()->store()->create($request->all());
 
         return redirect()->route('admin.stores.index');
 
